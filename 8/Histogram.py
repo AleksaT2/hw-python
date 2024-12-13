@@ -5,23 +5,6 @@ class HistogramStrategy:
     def write(self, file_path, histogram):
         raise NotImplementedError("Must implement write")
 
-class PNGHistogramStrategy(HistogramStrategy):
-    def read(self, file_path):
-        # Реализуйте логику чтения PNG
-        pass
-
-    def write(self, file_path, histogram):
-        # Реализуйте логику записи PNG
-        pass
-
-class JPEGHistogramStrategy(HistogramStrategy):
-    def read(self, file_path):
-        # Реализуйте логику чтения JPEG
-        pass
-
-    def write(self, file_path, histogram):
-        # Реализуйте логику записи JPEG
-        pass
 
 class HistogramContext:
     def __init__(self, strategy: HistogramStrategy):
