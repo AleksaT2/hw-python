@@ -19,9 +19,7 @@ class MonochromeImageProcessor(BaseImageProcessor):
             raise TypeError("Input must be a MonochromeImage")
 
     def apply_filters(self, image):
-        # Применение фильтра Гаусса
         image.data = cv2.GaussianBlur(image.data, (5, 5), 0)
-        # Применение детектора границ Canny
         image.data = cv2.Canny(image.data, 100, 200)
 
 class ColorImageProcessor(BaseImageProcessor):
@@ -30,7 +28,6 @@ class ColorImageProcessor(BaseImageProcessor):
             raise TypeError("Input must be a ColorImage")
 
     def apply_filters(self, image):
-        # Конвертация в градации серого
         gray_image = cv2.cvtColor(image.data, cv2.COLOR_BGR2GRAY)
         distance_transform = cv2.distanceTransform(gray_image, cv2.DIST_L2, 5)
 

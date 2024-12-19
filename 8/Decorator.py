@@ -8,5 +8,4 @@ def compute_hu_moments(func):
 class ImageDecorator:
     @compute_hu_moments
     def process_image(self, image):
-        # Обработка изображения (используя процессор для монохромного или цветного изображения)
         return image
